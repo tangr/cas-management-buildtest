@@ -17,6 +17,20 @@ on:
     branches: [ 6.3.x ]
   pull_request:
     branches: [ 6.3.x ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: '选择运行环境'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - prod
+      debug:
+        description: '是否开启调试模式'
+        required: false
+        type: boolean
 
 ##########################################################################
 
